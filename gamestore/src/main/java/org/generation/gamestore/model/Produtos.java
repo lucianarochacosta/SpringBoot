@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
@@ -19,18 +20,24 @@ public class Produtos {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotNull
 	@Size(min = 3, max = 100)
 	private String nome;
 
+	@NotNull
 	@Size(min = 3, max = 100)
 	private String marca;
 	
+	@NotNull
 	private Double valor;
 	
+	@NotNull
 	private int quantidadeJogadores;
 	
+	@NotNull
 	private int idadeMinima;
 	
+	@NotNull
 	private Long anoLancamento;
 	
 	@ManyToOne
